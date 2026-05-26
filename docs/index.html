@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>艦これ 最新情報</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, "Hiragino Sans", sans-serif;
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 0 16px;
+      background: #0d1117;
+      color: #c9d1d9;
+    }
+    h1 { font-size: 1.2rem; color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+    .updated { font-size: 0.8rem; color: #8b949e; margin-bottom: 20px; }
+    .tweet {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .tweet-text { white-space: pre-wrap; word-break: break-word; margin-bottom: 10px; }
+    .tweet-meta { font-size: 0.8rem; color: #8b949e; }
+    .tweet-meta a { color: #58a6ff; text-decoration: none; }
+    .tweet-meta a:hover { text-decoration: underline; }
+    .json-link { font-size: 0.8rem; color: #8b949e; margin-top: 24px; }
+    .json-link a { color: #58a6ff; }
+    #error { color: #f85149; }
+  </style>
+</head>
+<body>
+  <h1>🛳️ 艦これ (@KanColle_STAFF) 最新情報</h1>
+  <div class="updated" id="updated">読み込み中...</div>
+  <div id="tweets"></div>
+  <div id="error"></div>
+  <div class="json-link">
+    JSONデータ: <a href="./latest.json" target="_blank">latest.json</a>
+  </div>
+
+  <script>
+    fetch('./latest.json?t=' + Date.now())
+      .then(function(response) {
+        if (!response.ok) {
+          throw new Error('JSONの取得に失敗しました: ' + response.status);
+        }
+        return response.json();
+      })
+      .then(function(data) {
+        document.getElementById('updated').textContent =
+          '最終更新: ' + data.updated_at;
+
+        var container = document.getElementById('tweets');
+
+        if (!data.tweets || data.tweets.length === 0) {
+          container.textContent = 'ツイートがありません';
+          return;
+        }
+
+        data.tweets.forEach(function(tweet) {
+          var div = document.createElement('div');
+          div.className = 'tweet';
+
+          var text = document.createElement('div');
+          text.className = 'tweet-text';
+          text.textContent = tweet.text;
+
+          var meta = document.createElement('div');
+          meta.className = 'tweet-meta';
+
+          var link = document.createElement('a');
+          link.href = tweet.url;
+          link.target = '_blank';
+          link.textContent = tweet.timestamp;
+
+          meta.appendChild(link);
+          meta.insertAdjacentText('beforeend',
+            '　❤️ ' + tweet.likes + '　🔁 ' + tweet.retweets);
+
+          div.appendChild(text);
+          div.appendChild(meta);
+          container.appendChild(div);
+        });
+      })
+      .catch(function(error) {
+        document.getElementById('updated').textContent = '';
+        document.getElementById('error').textContent = error.message;
+      });
+  </script>
+</body>
+</html>
