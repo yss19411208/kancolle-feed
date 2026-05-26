@@ -1,0 +1,36 @@
+name: KanColle ツイート取得
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # 30分ごとに実行
+  workflow_dispatch:          # GitHub画面から手動実行も可能
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 をセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 依存パッケージをインストール
+        run: pip install -r requirements.txt
+
+      - name: ツイートを取得
+        run: python fetch_tweets.py
+        env:
+          X_AUTH_TOKEN: ${{ secrets.X_AUTH_TOKEN }}
+
+      - name: 変更があればコミット・プッシュ
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/latest.json
+          # 変更がない場合はコミットしない（--quietで差分なし時にエラーにしない）
+          git diff --staged --quiet || git commit -m "chore: update latest tweets"
+          git push
