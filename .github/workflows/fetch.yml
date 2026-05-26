@@ -2,12 +2,14 @@ name: KanColle ツイート取得
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # 30分ごとに実行
-  workflow_dispatch:          # GitHub画面から手動実行も可能
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # ← これを追加（git pushに必要）
 
     steps:
       - name: リポジトリをチェックアウト
@@ -31,6 +33,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add docs/latest.json
-          # 変更がない場合はコミットしない（--quietで差分なし時にエラーにしない）
           git diff --staged --quiet || git commit -m "chore: update latest tweets"
           git push
