@@ -53,6 +53,13 @@ new_latest_url = (
     or ""
 )
 
+# デバッグ用：取得できたツイートのURLを全件表示
+print(f"既存JSON最新URL: {existing_latest_url}")
+print(f"取得した最新URL: {new_latest_url}")
+for i, tweet in enumerate(tweets):
+    url = tweet.get("TweetURL") or tweet.get("tweet_url") or ""
+    print(f"  tweets[{i}]: {url}")
+
 if new_latest_url and new_latest_url == existing_latest_url:
     print("新しいツイートはありません。スキップします。")
     sys.exit(0)
