@@ -1,41 +1,41 @@
 {
-  "updated_at": "2026-10-18T13:45:00.073029+09:00",
+  "updated_at": "2026-10-22T06:22:57.731386+09:00",
   "account": "KanColle_STAFF",
   "tweets": [
     {
+      "timestamp": "Wed Oct 21 11:51:26 +0000 2026",
+      "text": "【緊急】プラットフォームである「#DMMGAMES」さん全体でこの後臨時メンテナンスを緊急で実施するとのことです！\n\n突然のことで恐縮ですが、プラットフォームである「#DMMGAMES」さんが臨時メンテナンスを緊急で実施するとのことです。\n---\n開始時間：本日22時より\n終了時間：現時点未明\n(本件詳細はDMMGAMESのお知らせをご確認ください)\nメンテナンス規模：DMMGAMES全体での臨時メンテナンス\n---\n本件はシステムのセキュリティ強化を目的とした予防的措置として、同プラットフォームサービスで利用している外部ソフトウェアにおいて確認された脆弱性への対応を目的としたもの、とのことです。\n以下、現時点の同詳細情報です。\n\n■メンテナンス予定日時\n2026年10月21日（水）22:00～終了時間未定\n\n■対象サービス\nメンテナンス期間中、以下のサービスがご利用いただけなくなります。\n　・DMM/FANZAプラットフォームへのアクセス\n　・ユーザーのログイン\n　・ユーザーの新規登録・退会\n　・課金の停止\n\nなお、「艦これ」本体ゲームサーバも同外部ソフトウェアを一部用いていますが、既に同基本予防措置は完了しています(※今後の同関連発表によっては、追加メンテを実施する場合もあります)。\n\n本件、取り急ぎ、緊急でご連絡です。",
+      "likes": 4442,
+      "retweets": 2734,
+      "url": "https://x.com/KanColle_STAFF/status/2112874399657574791"
+    },
+    {
       "timestamp": "Wed Oct 14 12:12:51 +0000 2026",
       "text": "本日実施「艦これ」稼働全20サーバ群メンテナンス＆アップデート、全作業完了しています！更新や接続などが不安定な場合は、ブラウザのキャッシュを削除後、再接続をどうぞお試しください！\n\n提督の皆さん、Halloweenの季節も、艦娘と共に Trick or Treat!\n#艦これ \n#メンテナンス \n#FleetHalloween",
-      "likes": 772,
-      "retweets": 171,
+      "likes": 793,
+      "retweets": 177,
       "url": "https://x.com/KanColle_STAFF/status/2110343073259831768"
     },
     {
       "timestamp": "Wed Oct 14 12:10:57 +0000 2026",
       "text": "33▼日本生まれ日本育ちの【鈴谷】に令和八年2026年、あの【Halloween】mode、がっつり限定実装開始です！ \n日本生まれの重巡洋艦【鈴谷】に、あの【Halloween】mode、堂々実装です！改二と改二航、違いのわかる提督はわかる？ んっ！\nTrick, Treat, or Fleet sortie?\n#艦これ \n#鈴谷\n#FleetHalloween",
-      "likes": 1581,
+      "likes": 1593,
       "retweets": 564,
       "url": "https://x.com/KanColle_STAFF/status/2110342593301139814"
     },
     {
       "timestamp": "Wed Oct 14 12:09:26 +0000 2026",
       "text": "32▼【Indiana】に今秋【Halloween】mode、限定実装開始です！ \n今夏の戦艦新艦娘、USSの高速戦艦【Indiana】にも、今秋描き下ろし&同ボイス、限定同時実装開始！\nTrick or Treat!! Give me some sweets! \n新たに鎮守府の艦隊に加わったUSS娘もよろしくどうぞ！\n#艦これ \n#Indiana\n#FleetHalloween",
-      "likes": 697,
-      "retweets": 206,
+      "likes": 705,
+      "retweets": 208,
       "url": "https://x.com/KanColle_STAFF/status/2110342211842011443"
     },
     {
       "timestamp": "Wed Oct 14 12:07:58 +0000 2026",
       "text": "31▼丁型お祭り娘【樫】にも、今秋【Halloween】mode、限定実装開始です！ \n丁型駆逐艦のお祭り娘【樫(かし)】にも今秋、彼女らしさ満開の【Halloween】mode、限定実装開始です！\nさらに、専用の艦娘【Halloween】ボイスも同時実装！\n丁型駆逐艦もよろしくどうぞ！\n#艦これ \n#樫\n#FleetHalloween",
-      "likes": 703,
-      "retweets": 201,
+      "likes": 710,
+      "retweets": 203,
       "url": "https://x.com/KanColle_STAFF/status/2110341843313643992"
-    },
-    {
-      "timestamp": "Wed Oct 14 12:07:08 +0000 2026",
-      "text": "30▼【対馬】に危険が一杯な【Halloween】mode、限定実装開始！ \n今秋も艦娘【焼き芋】mode、【モンブラン】【秋祭り法被】【オクトーバーフェスト】mode、一部の艦娘【秋私服】の期間限定実装を開始！\n艦娘夏制服も秋冬制服へ！\nさらに、危険が一杯な【#対馬】も今秋爆誕ッ！\n#艦これ \n#FleetHalloween",
-      "likes": 763,
-      "retweets": 235,
-      "url": "https://x.com/KanColle_STAFF/status/2110341634286321725"
     }
   ]
 }
